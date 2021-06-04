@@ -1,0 +1,208 @@
+@font-face {
+  font-family: Ghotam-Pro-Black;
+  src: url(../fonts/Ghotam-Pro-Black.ttf);
+}
+
+@font-face {
+  font-family: GIOTTOFLF;
+  src: url(../fonts/GIOTTOFLF.ttf);
+}
+
+:root {
+  --main-color: white;
+  --accent-color: black;
+  --nav-hover-color: red;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+/* Container */
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* Burger menu */
+.burger-menu {
+  display: none;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-box {
+  width: 100%;
+  list-style: none;
+  position: absolute;
+  display: none;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 24px;
+  color: var(--main-color);
+  margin: 0 20px;
+  text-decoration: none;
+  transition: color 0.2s linear;
+  text-decoration: none;
+  font-family: Ghotam-Pro-Black;
+  src: url(../fonts/Ghotam-Pro-Black.ttf);
+  font-size: 20px;
+}
+
+.menu-item:hover {
+  color: var(--nav-hover-color);
+}
+
+.menu-btn {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: var(--main-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -15px;
+  margin-top: -1.5px;
+}
+
+.menu-btn span::before,
+.menu-btn span::after {
+  content: "";
+}
+
+.menu-btn span:before {
+  transform: translateY(-10px);
+}
+
+.menu-btn span:after {
+  transform: translateY(10px);
+}
+
+#menu-toggle:checked ~ .menu-btn > span {
+  transform: rotate(45deg);
+}
+#menu-toggle:checked ~ .menu-btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu-toggle:checked ~ .menu-btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu-toggle:checked ~ .menu-box {
+  display: block;
+  left: 0;
+  margin-top: 35px;
+}
+
+.menu-btn > span,
+.menu-btn > span::before,
+.menu-btn > span::after {
+  transition-duration: 0.25s;
+}
+
+@media (max-width: 725px) {
+  .burger-menu {
+    display: block;
+  }
+
+  .navbar-list {
+    display: none;
+  }
+}
+
+/* Header */
+#home {
+  min-height: 100vh;
+  background-image: url(../img/background-home-page.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* Nav */
+.navbar {
+  font-family: "Ghotam-Pro-Black", sans-serif;
+  padding-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+}
+
+.nav-link {
+  color: var(--main-color);
+  text-decoration: none;
+  margin: 15px;
+  font-size: 20px;
+}
+
+.nav-link:hover {
+  color: var(--nav-hover-color);
+}
+
+.navbar-cart {
+  width: 100px;
+}
+
+.cart-back {
+  background-color: var(--accent-color);
+  width: 65px;
+  height: 65px;
+  border-radius: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Banner */
+.banner {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  margin-top: 150px;
+  display: flex;
+}
+
+.empty {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.delivery-banner {
+  font-family: GIOTTOFLF;
+  src: url(../fonts/GIOTTOFLF.ttf);
+}
+
+.delivery-banner h1 {
+  font-size: 180px;
+  color: var(--main-color);
+}
